@@ -98,38 +98,39 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 # mkdir /var/lib/freedom;
 # echo "IP=" >> /var/lib/freedom/ipvps.conf
 clear
-chmod +x scripts/*
+chmod +x scripts/*.sh
+
 ./scripts/cloudflare.sh > /dev/null 2>&1
 sleep 1
 clear
-screen -S ssh-vpn ./ssh-vpn.sh > /dev/null 2>&1
+screen -S ssh-vpn ./scripts/ssh-vpn.sh > /dev/null 2>&1
 sleep 1
 clear
-screen -S xray ./xray.sh > /dev/null 2>&1
+# screen -S xray ./xray.sh > /dev/null 2>&1
+# sleep 1
+# clear
+# screen -S sstp ./sstp.sh > /dev/null 2>&1
+# sleep 1
+# clear
+screen -S ssr ./scripts/ssr.sh > /dev/null 2>&1
 sleep 1
 clear
-screen -S sstp ./sstp.sh > /dev/null 2>&1
-sleep 1
-clear
-screen -S ssr ./ssr.sh > /dev/null 2>&1
-sleep 1
-clear
-screen -S ss ./shadowsocks.sh > /dev/null 2>&1
-sleep 1
-clear
-screen -S wireguard ./wireguard.sh > /dev/null 2>&1
-sleep 1
-clear
-screen -S ipsec ./ipsec.sh > /dev/null 2>&1
-sleep 1
-clear
-./set-br.sh > /dev/null 2>&1
-sleep 1
-clear
+# screen -S ss ./shadowsocks.sh > /dev/null 2>&1
+# sleep 1
+# clear
+# screen -S wireguard ./wireguard.sh > /dev/null 2>&1
+# sleep 1
+# clear
+# screen -S ipsec ./ipsec.sh > /dev/null 2>&1
+# sleep 1
+# clear
+# ./set-br.sh > /dev/null 2>&1
+# sleep 1
+# clear
 ./scripts/websocket.sh > /dev/null 2>&1
 sleep 1
 clear
-./ohp.sh > /dev/null 2>&1
+./scripts/ohp.sh > /dev/null 2>&1
 sleep 1
 clear
 
