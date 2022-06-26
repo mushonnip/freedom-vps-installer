@@ -12,7 +12,7 @@ fi
 
 # ANCHOR - Installing Dependencies
 apt update
-apt install -y bzip2 gzip coreutils screen curl unzip
+apt install -y bzip2 gzip coreutils screen curl unzip wget
 
 # ANCHOR - Setup
 # disable ipv6
@@ -35,7 +35,7 @@ bash acme.sh --issue --standalone -d $DOMAIN --force
 bash acme.sh --installcert -d $DOMAIN --fullchainpath /etc/cert/acme.crt --keypath /etc/cert/acme.key
 
 # ANCHOR - All Bin Install
-chmod +x bin/*
+chmod +x bin/**/*
 mv bin/ /usr/local/bin/
 
 # SECTION - Websocket TLS
