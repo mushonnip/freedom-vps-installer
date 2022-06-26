@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+read -p "Username : " Username
+read -p "Password : " Password
+read -p "Expired (Days): " ActiveDays
+
+clear
+useradd -e `date -d "$ActiveDays days" +"%Y-%m-%d"` -s /bin/false -M $Username
+echo -e "$Password\n$Password\n"|passwd $Username &> /dev/null
+echo -e "Username: $Username"
+echo -e "Password: $Password"
+echo -e "Success"

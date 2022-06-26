@@ -1,0 +1,29 @@
+#!/bin/bash
+echo -e "SSH & OpenVPN Menu"
+echo -e "-------------------------------------------------"
+echo -e "1. Create User"
+echo -e "2. User List"
+echo -e "3. Main Menu"
+echo -e "4. Exit"
+echo -e "-------------------------------------------------"
+read -p "Select: " menu
+echo -e ""
+case $menu in
+1)
+ssh-ws-create-user
+;;
+2)
+ssh-ws-users
+;;
+3)
+menu
+;;
+4)
+clear
+exit
+;;
+*)
+clear
+menu
+;;
+esac

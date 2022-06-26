@@ -1,0 +1,21 @@
+#!/bin/bash
+clear
+echo -e "-------------------------------------------------"
+echo -e "1. SSH & OpenVPN MENU"
+echo -e "2. Exit"
+echo -e "-------------------------------------------------"
+read -p "Select: " menu
+case $menu in
+1)
+clear
+ssh-openvpn-menu
+;;
+2)
+clear
+exit
+;;
+*)
+clear
+menu
+;;
+esac
